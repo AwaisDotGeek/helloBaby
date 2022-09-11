@@ -1,0 +1,685 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body,
+html {
+    font-family: 'Montserrat';
+    height: 100vh;
+}
+
+.title-img-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.search-box {
+    /* Centered using JS */
+    /* this is the class name for the whole box that contains search box, heading, and a small text in title img' center */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    text-align: center;
+    width: 35%;
+}
+
+#home-page-search-form {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+}
+
+#title-image-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+
+.title-img-heading {
+    color: white;
+    font-weight: 500;
+    font-size: 52px;
+}
+
+.title-img-text {
+    color: white;
+    margin-top: -5px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#home-page-search-form>input {
+    flex-grow: 2;
+    border: none;
+    outline: none;
+    padding: 0.5em 0.8em;
+    border-radius: 30px;
+}
+
+#home-page-search-form>button {
+    background: linear-gradient(90deg, #e20a14, #71050a);
+    color: white;
+    border: none;
+    width: 70px;
+    border-radius: 30px;
+    margin-left: -45px;
+}
+
+/* Navbar-2 */
+.div-as-navbar-2 {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5em;
+}
+
+.div-as-navbar-2>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-as-navbar-2>ul>li {
+    padding: 0.2em 0.5em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-as-navbar-2>ul>li>a {
+    font-size: 13px;
+    border-radius: 30px;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.div-as-navbar-2>ul>li>a>i {
+    /* location dot icon*/
+    visibility: hidden;
+}
+
+.location-mark {
+    /* this class is added to 'i' in nav-2 when mouse enters and vice versa*/
+    visibility: visible !important;
+}
+
+.div-as-navbar-2>ul>li>a:hover {
+    background: linear-gradient(90deg, #E20A14, #71050A);
+}
+
+/* Text after nav-2 */
+.text-after-nav-2 {
+    background-color: #F0F2F3;
+    padding: 0.8em 6.5em;
+    font-size: 14px;
+}
+
+/* Home page section headings, texts and buttons ( the page is devided into various sections )*/
+.page-heading {
+    font-size: 24px;
+}
+
+.page-text {
+    font-size: 16px;
+    padding: 0 13%;
+}
+
+.page-btn {
+    background: linear-gradient(45deg, #EF1B24, #71050a);
+    color: #fff;
+    padding: 0.3em 2em;
+    font-size: 17px;
+}
+
+.recent-images-btn-small-screens {
+    display: none;
+}
+
+.page-btn:hover {
+    background: linear-gradient(45deg, #71050a, #EF1B24);
+    color: #fff;
+}
+
+/* ==================================== Popular Categories ================================= */
+#categories {
+    padding: 2em 7em;
+}
+
+.pop-cat-imgs-container {
+    padding: 2em 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 0.7em;
+    column-gap: 0.7em;
+}
+
+.category {
+    /* each category is in a div */
+    position: relative;
+}
+
+.category-img-text {
+    /* Centered using JS */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+
+.pop-cat-img-shadow {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    /* ------------------ opacity is managed by jquery ------------------- */
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.pop-cat-heading-2 {
+    display: none;
+}
+
+/* ============================== Featured Artists =============================== */
+#featured-artists>div:nth-child(1) {
+    padding-bottom: 1.5em;
+}
+
+.featured-artists-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: #F0F2F3; */
+    background-color: #afadac;
+    padding: 2em 2.5em;
+}
+
+.cards {
+    padding: 0 !important;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.8em;
+    row-gap: 0.8em;
+}
+
+.my-card {
+    background-color: white;
+    border-radius: 5px;
+
+    display: grid !important;
+    grid-template-rows: 1fr 1.7fr;
+    row-gap: 2em;
+    width: 100% !important;
+
+    position: relative;
+    padding: 5px;
+}
+
+.img-section {
+    /*  3 imgs in top */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2px;
+}
+
+.img-section>img {
+    object-fit: cover;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 0.8em;
+}
+
+.info-section>a {
+    /* profile name */
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.info-section>a:hover {
+    color: #e20a14;
+}
+
+.card-labels-as-text {
+    font-size: 14px;
+}
+
+.card-labels-as-text>a {
+    color: #707070;
+    text-decoration: none;
+}
+
+.info-section>.btn {
+    background-color: transparent;
+    color: #2053fb;
+    border: 1px solid #2053fb;
+    border-radius: 30px;
+    width: 90%;
+    padding: 0.25em 0;
+    font-size: 14px;
+    margin-top: 1em;
+}
+
+.profile-img {
+    background-color: white;
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    top: 15%;
+    left: 50%;
+    margin-left: -34px;
+}
+
+.profile-img>a>img {
+    height: 100% !important;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.profile-img>a:hover {
+    opacity: 0.8;
+}
+
+.left-right-btn {
+    background-color: transparent;
+    width: 60px;
+    border: none;
+    color: #e20a14;
+    padding: 0 1em;
+}
+
+/* =========================== Featured artist for phone =========================== */
+#featured-artists-for-phones {
+    /* see on phone */
+    padding-top: 0.5em;
+    display: none;
+}
+
+.artists-container-for-phones {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.5em;
+
+    padding: 1.5em 2.5em;
+}
+
+.artist {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.artist-profile-img-container-for-phones {
+    height: 50px;
+    width: 50px;
+    padding: 1px;
+    border-radius: 50%;
+    border: 0.2px solid #e20a14;
+}
+
+.artist-profile-img-container-for-phones>img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.artist-name-for-phones {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 5em;
+    font-size: 12px;
+}
+
+/* ------------------------------ Recent images --------------------------- */
+#recent-images {
+    padding-bottom: 3em;
+}
+
+.recent-img-header-container {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    padding: 0 4%;
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 0.5em;
+}
+
+.recent-img-rows {
+    display: grid;
+    gap: 0.5em;
+}
+
+.row-1 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.row-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.row-2 {
+    grid-template-columns: 2fr 1fr 2fr 2fr;
+}
+
+.recent-img-rows>div {
+    position: relative;
+}
+
+.recent-img-shadow-and-links {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    cursor: pointer;
+
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.make-recent-img-shadow-and-links-visible {
+    visibility: visible;
+}
+
+.recent-img-shadow-and-links>a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+}
+
+.recent-img-shadow-and-links>a:nth-child(1),
+.recent-img-shadow-and-links>a:nth-child(2) {
+    position: absolute;
+}
+
+.recent-img-shadow-and-links>a:nth-child(1)>div,
+.recent-img-shadow-and-links>a:nth-child(2)>div {
+    width: 25px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.recent-img-shadow-and-links>a:nth-child(1) {
+    top: 15px;
+    right: 10px;
+}
+
+.recent-img-shadow-and-links>a:nth-child(2) {
+    top: 55px;
+    right: 10px;
+}
+
+.recent-img-shadow-and-links>a:nth-child(1)>img,
+.recent-img-shadow-and-links>a:nth-child(2)>img {
+    object-fit: cover;
+}
+
+.recent-img-shadow-and-links>a:nth-child(3) {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    z-index: 2;
+    text-align: left;
+}
+
+.recent-img-shadow-and-links>a:nth-child(3)>p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    height: 1.2em;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+/* shadow */
+.recent-img-shadow-and-links>div {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    background-color: #707070;
+    box-shadow: 0 -1px 150px 50px #000;
+}
+
+/* ====================== media query ===========================*/
+@media screen and (max-width: 991px) {
+    .search-box {
+        width: 50%;
+    }
+
+    .div-as-navbar-2>ul {
+        display: none;
+    }
+
+    .text-after-nav-2 {
+        padding: 1em 3em;
+    }
+
+    #categories {
+        padding: 2em 3em;
+    }
+
+    .pop-cat-imgs-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pop-cat-imgs-container>div:last-child,
+    .pop-cat-imgs-container>div:nth-last-child(2) {
+        display: none;
+    }
+
+    .featured-artists-text {
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 5em;
+        line-height: 1.8em;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .page-btn:nth-child(2) {
+        margin-top: 0.5em;
+    }
+
+    .recent-images-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    .row-1,
+    .row-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row-1>div:nth-child(3),
+    .row-3>div:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    .row-2 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .row-2>div:nth-child(1) {
+        grid-column: 1/4;
+    }
+
+    .row-2>div:nth-child(3),
+    .row-2>div:nth-child(4) {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-box {
+        width: 70%;
+    }
+
+    .title-img-heading {
+        font-size: 36px;
+    }
+
+    .title-img-text {
+        font-size: 16px;
+    }
+
+    .text-after-nav-2 {
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 5.1em;
+        line-height: 1.8em;
+
+        box-shadow: 0 -20px 65px 1px #707070;
+    }
+
+    .div-as-navbar-2 {
+        margin-top: -2px;
+    }
+
+    .pop-cat-heading-1 {
+        display: none;
+    }
+
+    .pop-cat-heading-2 {
+        display: block;
+    }
+
+    .pop-cat-imgs-container {
+        padding-top: 0.5em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recent-img-header-container {
+        flex-direction: column;
+    }
+
+    .page-heading {
+        font-size: 22px !important;
+    }
+
+    .page-text {
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .title-img-container {
+        height: 43.5vh;
+    }
+
+    .title-image-shadow {
+        opacity: 0.6;
+    }
+
+    .search-box {
+        width: 85%;
+    }
+
+    .title-img-heading {
+        font-size: 32px;
+    }
+
+    .recent-images-above-text {
+        display: none;
+    }
+
+    #categories {
+        padding-top: 0 !important;
+        padding: 2em;
+    }
+
+    .pop-cat-imgs-container>div:nth-child(5),
+    .pop-cat-imgs-container>div:nth-child(6) {
+        display: none;
+    }
+
+    #featured-artists {
+        display: none;
+    }
+
+    #featured-artists-for-phones {
+        display: block;
+    }
+
+    .featured-artists-text {
+        line-height: 1;
+        padding: 0 2em;
+        max-height: 3em;
+    }
+
+    .recent-img-header-container>button {
+        display: none;
+    }
+
+    .recent-img-header-container {
+        margin-top: 1em;
+    }
+
+    .page-btn {
+        font-size: 15px;
+    }
+
+    .recent-images-btn-small-screens {
+        display: block;
+    }
+
+    .row-1,
+    .row-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .row-1>div:nth-child(3),
+    .row-3>div:nth-child(3) {
+        display: none;
+    }
+
+    .row-2>div:nth-child(3),
+    .row-2>div:nth-child(4) {
+        display: none;
+    }
+}
